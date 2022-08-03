@@ -1,0 +1,19 @@
+<%-include ("partials/header.ejs") %>
+
+  <h2 id="login_heading"> Signin to continue !👋</h2>
+  <div class="login user_login">
+    <form method="post" action="/signin">
+      <div class="mb-3">
+        <label for="username"  class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" autocomplete="off" id="username" aria-describedby="emailHelp">
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" autocomplete="off" id="password">
+      </div>
+      <button type="submit" class="btn btn-success">Sign-in</button> 
+
+      <h6 id="span"> Don't have a account ? <a href="/signup"> Sign up!</a></h6>
+    </form>  
+  </div>

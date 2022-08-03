@@ -1,0 +1,184 @@
+<%-include ("partials/header.ejs") %>
+
+
+<section id="top">
+  <div class="container-fluid">
+    <div class="row">
+      <div class=" head col-lg-6 col-md-12 col-sm-12">
+        <h1 id="tophead">Get all groceries delivered at your doorstep within 30 Minutes all over coimbatore!
+        </h1> <br>
+        <button class="btn btn-lg btn-top "> Explore More &nbsp; ></button> <br> <br>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <img id="imagetop" src="/Images/Groceries.jpg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Second Section -->
+<section id="product_category">
+  <div class="container-fluid">
+    <div class="row">
+      <h1 id="products_cat">Explore Categories 🍀</h1>
+      <div class=" cards col-lg-4 col-md-12 col-sm-12" data-aos="zoom-in">
+        <div class="card border border-3">
+          <div class="card-header home_card_header">Vegetables</div>
+          <div class="card-body">
+            <img src="Images/1.png" class="card-img vg">
+            <h3 class="card-text">Vegetables are healthy choice for wealthy mind.We provide fresh vegetables right from
+              the fields.</h3>
+            <button class="cardbtn btn btn-success" onclick="location.href='/vegetables'">Show All</button>
+          </div>
+        </div>
+      </div>
+      <div class="cards col-lg-4 col-md-12 col-sm-12">
+        <div class="card border border-3">
+          <div class="card-header home_card_header">Fruits</div>
+          <div class="card-body">
+            <img src="Images/2.png" class="card-img fr">
+            <h3 class="card-text">Fresh Fruits are Crazy Good. Feel It - Fruit! Make The World A Better Place With
+              Fruits.</h3>
+            <button class="cardbtn btn btn-success" onclick="location.href='/fruits'">Show All</button>
+          </div>
+        </div>
+      </div>
+      <div class="cards col-lg-4 col-md-12 col-sm-12">
+        <div class="card border border-3">
+          <div class="card-header home_card_header">Diary Products</div>
+          <div class="card-body">
+            <img src="Images/3.png" class="card-img di">
+            <h3 class="card-text">Dairy Items For Strong Bodies and For Strong Minds. Order diary items from The Grocery
+              Story.</h3>
+            <button class="cardbtn btn btn-success ">Show All</button>
+          </div>
+        </div>
+      </div>
+      <div class="cards col-lg-4 col-md-12 col-sm-12">
+        <div class="card border border-3">
+          <div class="card-header home_card_header">Meat</div>
+          <div class="card-body">
+            <img src="Images/4.png" class="card-img me">
+            <h3 class="card-text">Eat Meat without any hesitation to live a better life! Place an order to get fresh
+              meat.</h3>
+            <button class="cardbtn btn btn-success">Show All</button>
+          </div>
+        </div>
+      </div>
+      <div class="cards col-lg-4 col-md-12 col-sm-12">
+        <div class="card border border-3">
+          <div class="card-header home_card_header">Spices</div>
+          <div class="card-body">
+            <img src="Images/5.png" class="card-img sp">
+            <h3 class="card-text">The secret of happiness is variety, but the secret of variety, like the secret of all
+              spices. Order Now</h3>
+            <button class="cardbtn btn btn-success" onclick="">Show All</button>
+          </div>
+        </div>
+      </div>
+      <div class="cards col-lg-4 col-md-12 col-sm-12">
+        <div class="card border border-3">
+          <div class="card-header home_card_header">Nuts & Dry Fruits</div>
+          <div class="card-body">
+            <img src="Images/6.png" class="card-img sn">
+            <h3 class="card-text">Nuts - The best among the rest! Best dried natural products with the best cost.
+              Explore more. </h3> <br> <br>
+            <button class="cardbtn btn btn-success ">Show All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="calculator">
+  <div class="calc">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 id="calc_text" class="mx-5"> Let's Calculate the Delivery Time 🛵</h1>
+        <div class="col-lg-12 calc">
+          <div class="calculator">
+            <div class="inputfrm">
+              <label for="exampleFormControlInput1" class="form-label w-100 lab">Enter the distance of your home from
+                Coimbatore Bus stand :)</label>
+              <input type="number" class="form-control" id="myInput" placeholder="5 kilometeres"
+                onkeypress="event.charCode >= 48" min="1" required>
+              <button type="submit" onclick=calculate()  class="btn btn-lg calc_btn ">Boom</button>
+              <p id="result"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="features">
+  <div class="row">
+    <h1 id="features_head">Why to choose The Grocery Story?</h1>
+    <div id="features_section" class="col-lg-3 col-md-6">
+      <i id="icons" class="fa fas fa-shipping-fast fa-3x"></i>
+      <h3 class="headfont_features">Fastest Delivery</h3>
+      <p class="features_desc">Get your order within 30 minutes</p>
+    </div>
+
+    <div id="features_section" class="col-lg-3 col-md-6">
+      <i id="icons" class="fa-solid fa-store fa-3x"></i>
+      <h3 class="headfont_features">50+ Stores</h3>
+      <p class="features_desc">Over 50+ stores all around Coimbatore</p>
+    </div>
+
+    <div id="features_section" class="col-lg-3 col-md-6">
+      <i id="icons" class="fa fa-feather-pointed fa-3x"></i>
+      <h3 class="headfont_features">Clean & Fresh</h3>
+      <p class="features_desc">Fresh groceries right away from fields</p>
+    </div>
+
+    <div id="features_section" class="col-lg-3 col-md-6">
+      <i id="icons" class="fa-solid fa-3x fa-indian-rupee-sign"></i>
+      <h3 class="headfont_features">Lowest Price</h3>
+      <p class="features_desc">Get all groceries at very low price</p>
+    </div>
+  </div>
+
+
+</section>
+
+<section id="newsletter">
+  <div class="calc">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 id="calc_text" class="mx-5"> Subscribe to our newsletter! 📩</h1>
+        <div class="col-lg-12 calc">
+          <div class="calculator">
+            <div class="inputfrm">
+              <label for="exampleFormControlInput1" class="form-label w-100 lab">Enter your email to get weekly updates :)</label> <br>
+              <input type="email" class="form-control" id="mailid" aria-describedby="emailHelp" placeholder="Enter email">
+              <button type="submit" onclick=subscribe()  class="btn btn-lg calc_btn ">Subscribe</button>
+              <p id="mail_res" style="margin-top: 40px;"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<script>
+  function calculate(){
+    const input = document.getElementById("myInput").value;
+    if(input!= ""){
+      document.getElementById("result").innerHTML = input * 5 + " Minutes.";
+    }
+    else{
+      document.getElementById("result").innerHTML = "Enter a valid distance!"
+    }
+  }
+
+  function subscribe(){
+    const mail = document.getElementById("mailid").value;
+    if(mail != "" && mail.type === email){
+      document.getElementById("mail_res").innerHTML = "Thank you for subscribing!";
+    }
+    else{
+      alert(123)
+    }
+  }
+</script>
+<%-include ("partials/footer.ejs") %>

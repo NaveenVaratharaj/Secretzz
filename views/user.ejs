@@ -1,0 +1,88 @@
+<%-include ("partials/header_1.ejs") %>
+<div class="maindiv">
+  <h2 style="text-align: center"> Welcome back user 👋</h2>
+  <!-- Second Section -->
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <h1 id="products_cat">Order Anything here!</h1>
+        <div class=" cards col-lg-4 col-md-12 col-sm-12" data-aos="zoom-in">
+          <div class="card border border-3">
+            <div class="card-header home_card_header">Vegetables</div>
+            <div class="card-body">
+              <img src="Images/1.png" class="card-img vg">
+              <h3 class="card-text">Vegetables are healthy choice for wealthy mind.We provide fresh vegetables right
+                from
+                the fields.</h3>
+              <button class="cardbtn btn btn-success" onclick="location.href='/vegetables1'">Show All</button>
+            </div>
+          </div>
+        </div>
+        <div class="cards col-lg-4 col-md-12 col-sm-12">
+          <div class="card border border-3">
+            <div class="card-header home_card_header">Fruits</div>
+            <div class="card-body">
+              <img src="Images/2.png" class="card-img fr">
+              <h3 class="card-text">Fresh Fruits are Crazy Good. Feel It - Fruit! Make The World A Better Place With
+                Fruits.</h3>
+              <button class="cardbtn btn btn-success" onclick="location.href='/fruits1'">Show All</button>
+            </div>
+          </div>
+        </div>
+        <div class="cards col-lg-4 col-md-12 col-sm-12">
+          <div class="card border border-3">
+            <div class="card-header home_card_header">Diary Products</div>
+            <div class="card-body">
+              <img src="Images/3.png" class="card-img di">
+              <h3 class="card-text">Dairy Items For Strong Bodies and For Strong Minds. Order diary items from The
+                Grocery
+                Story.</h3>
+              <button class="cardbtn btn btn-success" onclick="location.href='/diary1'">Show All</button>
+            </div>
+          </div>
+        </div>
+        <div class="cards col-lg-4 col-md-12 col-sm-12">
+          <div class="card border border-3">
+            <div class="card-header home_card_header">Meat</div>
+            <div class="card-body">
+              <img src="Images/4.png" class="card-img me">
+              <h3 class="card-text">Eat Meat without any hesitation to live a better life! Place an order to get fresh
+                meat.</h3>
+              <button onclick="location.href='/meat1'" class="cardbtn btn btn-success">Show All</button>
+            </div>
+          </div>
+        </div>
+        <div class="cards col-lg-4 col-md-12 col-sm-12">
+          <div class="card border border-3">
+            <div class="card-header home_card_header">Spices</div>
+            <div class="card-body">
+              <img src="Images/5.png" class="card-img sp">
+              <h3 class="card-text">The secret of happiness is variety, but the secret of variety, like the secret of
+                all
+                spices. Order Now</h3>
+              <button class="cardbtn btn btn-success" onclick="location.href='/spices1'">Show All</button>
+            </div>
+          </div>
+        </div>
+        <div class="cards col-lg-4 col-md-12 col-sm-12">
+          <div class="card border border-3">
+            <div class="card-header home_card_header">Nuts & Dry Fruits</div>
+            <div class="card-body">
+              <img src="Images/6.png" class="card-img sn">
+              <h3 class="card-text">Nuts - The best among the rest! Best dried natural products with the best cost.
+                Explore more. </h3>
+              <button class="cardbtn btn btn-success" onclick="location.href='/nuts1'">Show All</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  function successmsg() {
+    alert("Success");
+  }
+</script>
+<%-include ("partials/footer.ejs") %>

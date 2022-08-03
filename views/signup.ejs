@@ -1,0 +1,33 @@
+<%-include ("partials/header.ejs") %>
+  <head>
+    <title>Signup</title>
+  </head>
+  <h2 id="login_heading">Register Here ⚡</h2>
+  <div class="login signup">
+    <form method="post"; action="/signup" >
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" autocomplete="off" id="username" aria-describedby="emailHelp" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control"  id="email" autocomplete="off" name="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" maxlength="100" minlength="8" autocomplete="off" class="form-control" id="password" name="password" required>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-success">Sign-Up</button> 
+      <h6 id="span" class="mb-0"> Already have an account? <a href="/signin"> Sign in!</a></h6>
+      <br>
+    </form>  
+  </div>
+
+  <script>
+    function already(){
+      alert("User already exist!")
+    }
+  </script>

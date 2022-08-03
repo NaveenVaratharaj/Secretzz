@@ -1,0 +1,27 @@
+{
+  "name": "updated-ecommerce",
+  "version": "1.0.0",
+  "description": "Ecommerce Application using MongoDB, NodeJS, ExpressJS, EJS and so on",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Naveen Varatharaj",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "jquery": "^3.6.0",
+    "mongoose": "^6.2.7",
+    "morgan": "^1.10.0",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.0.0",
+    "tata-js": "^0.1.0",
+    "toastr": "^2.1.4"
+  }
+}
