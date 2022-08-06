@@ -6,19 +6,15 @@ const mongoose = require('mongoose');
 const Router = require('./routes/server')
 const bcrypt = require('bcrypt');
 const session = require("express-session");
-const User = require("./models/User");
-const morgan = require('morgan')
+const User = require("./models/Main");
 var cookieParser = require("cookie-parser");
 const saltRounds = 6;
-
 
 const app = express();
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
-app.use(morgan("dev"));
 
 
 app.use(cookieParser());
@@ -30,7 +26,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      expires: 6000000,
+      expires: 600000
     },
   })
 );
@@ -45,12 +41,37 @@ app.use((req, res, next) => {
 
 var sessionChecker = (req, res, next) => {
   if (req.session.user && req.cookies.user_sid) {
-    res.redirect("/user");
+    res.redirect("/main");
   } else {
     next();
   }
 };
 
+//Journal Schema
+const journalSchema = new mongoose.Schema({
+  title: String,
+  content: String,
+  feedback: String,
+  date: String
+});
+
+const Journal = mongoose.model("Journal", journalSchema);
+
+//Date value Generation
+var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; 
+    var yyyy = today.getFullYear();
+    if(dd<10) 
+    {
+        dd='0'+dd;
+    } 
+    
+    if(mm<10) 
+    {
+        mm='0'+mm;
+    } 
+    today = mm+'-'+dd+'-'+yyyy;
 
 app.get("/", sessionChecker, (req, res) => {
   res.render("home");
@@ -75,7 +96,7 @@ app
       } else {
           console.log(docs)
         req.session.user = docs;
-        res.render("user", {username: " " + req.body.username});
+        res.redirect("/main");
       }
     });
   });
@@ -87,11 +108,11 @@ app
     res.render("signin");
   })
   .post(async (req, res) => {
-      var username = req.body.username;
+      var email = req.body.email;
       var password = req.body.password;
 
       try {
-        var user = await User.findOne({ username: username }).exec();
+        var user = await User.findOne({ email: email }).exec();
         if(!user) {
             res.redirect("/signin");
         }
@@ -101,19 +122,55 @@ app
             }
         });
         req.session.user = user;
-        res.render("user", {username: req.body.username});
+        res.redirect("/main");
     } catch (error) {
       console.log(error)
     }
   });
+  text="Welcome back user 👋 Scroll down for memories ⚡";
+
 
 // route for user's dashboard
-app.get("/user", (req, res) => {
+app.get("/main", (req, res) => {
   if (req.session.user && req.cookies.user_sid) {
-    res.render("user");
+    Journal.find({}, (err,result) => {
+      if(err){
+        console.log(err)
+      }
+      else{
+        res.render("main", {memories: result})
+      }
+    })
   } else {
     res.redirect("/signin");
   }
+});
+
+
+//Route for compose page
+app.get("/compose", (req, res) => {
+  if (req.session.user && req.cookies.user_sid) {
+    res.render("compose", {todayDate:today});
+  } else {
+    res.redirect("/signin");
+  }
+});
+
+// Post Compose
+app.post("/compose", function(req, res) {   
+  const journ = new Journal({
+      title: req.body.postTitle,
+      content: req.body.postBody,
+      feedback:req.body.feedBack,
+      date: today
+    });
+
+    journ.save(function(err){
+      if (!err){
+          res.redirect("/main");
+      }
+    });
+
 });
 
 // route for user logout
@@ -125,84 +182,6 @@ app.get("/signout", (req, res) => {
     res.redirect("/signin");
   }
 });
-
-
-app.get("/meat1", function(req,res){
-  if (req.session.user && req.cookies.user_sid) {
-    res.render("meat1");
-  } else {
-    res.redirect("/signin");
-  }
-})
-
-app.get("/vegetables1", function(req,res){
-  if (req.session.user && req.cookies.user_sid) {
-    res.render("vegetables1");
-  } else {
-    res.redirect("/signin");
-  }
-})
-
-app.get("/diary1", function(req,res){
-  if (req.session.user && req.cookies.user_sid) {
-    res.render("diary1");
-  } else {
-    res.redirect("/signin");
-  }
-})
-
-app.get("/spices1", function(req,res){
-  if (req.session.user && req.cookies.user_sid) {
-    res.render("spices1");
-  } else {
-    res.redirect("/signin");
-  }
-})
-
-app.get("/fruits1", function(req,res){
-  if (req.session.user && req.cookies.user_sid) {
-    res.render("fruits1");
-  } else {
-    res.redirect("/signin");
-  }
-})
-
-app.get("/nuts1", function(req,res){
-  if (req.session.user && req.cookies.user_sid) {
-    res.render("nuts1");
-  } else {
-    res.redirect("/signin");
-  }
-})
-
-app.get("/cart", function(req,res){
-  if (req.session.user && req.cookies.user_sid) {
-    res.render("cart");
-  } else {
-    res.redirect("/signin");
-  }
-})
-
-// Vegetables page
-app.get("/vegetables", function(req,res){
-  res.render('vegetables.ejs')
-})
-
-// fruits page
-app.get("/fruits", function(req,res){
-  res.render('fruits.ejs')
-})
-
-// meat page
-app.get("/meat", function(req,res){
-  res.render('meat.ejs');
-})
-
-// Diary page
-app.get("/diary", function(req,res){
-  res.render('diary.ejs');
-})
-
 
 
 app.listen(8000, ()=>{
