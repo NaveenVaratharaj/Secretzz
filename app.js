@@ -173,6 +173,19 @@ app.post("/compose", function(req, res) {
 
 });
 
+
+app.get("/secrets/:postId", function(req, res){
+
+  const requestedPostId = req.params.postId;
+    Journal.findOne({_id: requestedPostId}, function(err, jour){
+      res.render("secrets", {
+        title: jour.title,
+        content: jour.content
+      });
+    });
+
+  });
+
 // route for user logout
 app.get("/signout", (req, res) => {
   if (req.session.user && req.cookies.user_sid) {

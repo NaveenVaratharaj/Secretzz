@@ -94,15 +94,18 @@ img{
   width: 480px;
   margin-top: 5%;
 }
+
 #span{
   padding-top: 6%;
 }
+
 #login_heading{
   text-align: center;
   margin-top: 50px;
   font-size: 2.2rem;
   color: #064635;
 }
+
 /* Signup Page */
 .signup{
   height: 510px;
@@ -153,6 +156,26 @@ img{
   background-color: #d9ffdd;
 }
 
+.card-header{
+  background: #d9ffdd;
+}
+
+.cards{
+  padding-top: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(0.5px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.cards:hover, .cards:focus, .cards:active {
+  -webkit-transform: scale(0.1);
+  transform: scale(1.1);
+}
 
 
  /* APPLYING MEDIA QUERIES */
@@ -173,22 +196,6 @@ img{
   margin-top: 30px;
   margin-left:-10px;
   height: auto;
-}
-#veg_text{
-  display: none;
-  position: relative;
-}
-#myInput{
-  font-size: 1rem;
-  width: 80%;
-  position: relative;
-  left: -50px;
-}
-#mailid{
-  font-size: 1rem;
-  width: 80%;
-  position: relative;
-  left: -50px;
 }
 /* Login */
 .login{
@@ -216,5 +223,9 @@ img{
 th{
   color: #11861f;
   font-size: 20px;
+}
+
+.form-width{
+  width: 90%;
 }
 }

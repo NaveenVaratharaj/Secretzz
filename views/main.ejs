@@ -1,22 +1,23 @@
 <%-include ("partials/header_1.ejs") %>
 <div class="maindiv">
-  <h2 style="text-align: center">Welcome 👋</h2>
+  <h2 style="text-align: center">Welcome User👋 Explore some memories 🙌</h2>
   <div class="container-fluid"> 
-    <% memories.forEach(function(memory){ %>
-      <div class="row">
-        <div class=" cards col-lg-4 col-md-12 col-sm-12">
+    <div class="row">
+      <% memories.forEach(function(memory){ %>
+        <div class=" cards col-lg-4 col-md-12 col-sm-12 mb-3">
           <div class="card border border-3">
             <div class="card-header text_date">
               <div class="home_card_header"><%= memory.feedback%></div>
               <div class="home_card_date">📅 <%= memory.date%></div>
             </div>
             <div class="card-body">
-              <h3>🧐 <%= memory.title%></h3>
+              <h3><%= memory.title%></h3>
               <p class="card-text"><%= memory.content%></p>
-              <button class="cardbtn btn btn-success" onclick="location.href='/vegetables'">Show All</button>
             </div>
           </div>
-    <% }) %> 
+        </div>
+      <% }) %>
+    </div>
   </div>
 </div>
 <script>
