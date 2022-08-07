@@ -177,7 +177,6 @@ img{
   transform: scale(1.1);
 }
 
-
  /* APPLYING MEDIA QUERIES */
 @media (max-width: 768px) {
   #tophead{
@@ -185,16 +184,21 @@ img{
     font-weight: bolder;
     padding-top: 10px;
     color: #064635;
+    text-align: center;
+  }
+
+  .write_now{
+    margin-left: 40px;
   }
 .head{
   text-align: center;
   font-size: 2rem;
   margin-top: 20px;
 }
-#imagetop{
+.imagetop{
   width: 350px;
   margin-top: 30px;
-  margin-left:-10px;
+  margin-left:20px;
   height: auto;
 }
 /* Login */
