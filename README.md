@@ -2,7 +2,7 @@
 
 This web app is created using NodeJS, ExpressJS, EJS, MongoDB, Bootstrap and Bcrypt!
 
-This web app is created to know share of the secrets/memories of our college mates and friends, In this app you can anonymously post your funny, memorable, embarassing moments without saying who you are.
+This web app is created to share the secrets/memories of our college mates and friends, In this app you can anonymously post your funny, memorable, embarassing moments without saying who you are.
 
 Team Members - Naveen & Anuprakash
 
