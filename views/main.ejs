@@ -1,25 +1,7 @@
-<%-include ("partials/header_1.ejs") %>
+<%-include ("partials/header.ejs") %>
 <div class="maindiv">
   <h2 style="text-align: center">Welcome User👋 Explore some secrets 🙌</h2>
   <div class="container-fluid"> 
-    <div class="row">
-      <% memories.forEach(function(memory){ %>
-        <div class=" cards col-lg-4 col-md-12 col-sm-12 mb-3">
-          <div class="card border border-3">
-            <div class="card-header text_date">
-              <div class="home_card_header"><%= memory.feedback%></div>
-              <div class="home_card_date">📅 <%= memory.date%></div>
-            </div>
-            <div class="card-body">
-              <h3><%= memory.title%></h3>
-              <p class="card-text"><%= memory.content%></p>
-            </div>
-          </div>
-        </div>
-      <% }) %>
-    </div>
+    
   </div>
 </div>
-<script>
-    alert("User Authenticated Successfully!");
-</script>

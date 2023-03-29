@@ -18,5 +18,14 @@
     "jquery": "^3.6.0",
     "mongoose": "^6.2.7",
     "morgan": "^1.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaveenVaratharaj/Memoric---A-place-to-find-memories-and-stories.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/NaveenVaratharaj/Memoric---A-place-to-find-memories-and-stories/issues"
+  },
+  "homepage": "https://github.com/NaveenVaratharaj/Memoric---A-place-to-find-memories-and-stories#readme"
 }

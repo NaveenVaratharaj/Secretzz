@@ -1,6 +1,6 @@
-<%- include("partials/header_1") -%>
+<%- include("partials/header") -%>
 
-<h2 id="text_Top">Write your memories here without saying who you are! 🧐</h2>
+<h2 id="text_Top">Write your secrtes here without saying who you are! 🧐</h2>
 
 <div class="form-width container">
     <form action="/compose" method="post">
@@ -11,11 +11,11 @@
       
       <div class="form-group mb-4">
         <label for="">Date</label>
-        <input type="text" class="form-control" name="form-date" disabled value="<%= todayDate %>"/>
+        <input type="date" class="form-control" name="dateGiven"/>
       </div>
 
       <div class="form-group mb-4">
-        <label for="sel1" class="form-label">The moment was</label>
+        <label for="sel1" class="form-label">This one was</label>
         <select class="form-select form-control" id="sel1" name="feedBack">
           <option selected>🤗 Memorable!</option>
           <option>😄 Happy!</option>
@@ -40,8 +40,8 @@
         ></textarea>
       </div>
       <div class="but">
-        <button class="btn btn-success btn-md" type="submit " name="buton ">
-          Publish your memory
+        <button class="btn btn-success btn-md" type="submit " name="buton">
+          Publish your secret
         </button>
       </div>
     </form>
