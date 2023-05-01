@@ -2,6 +2,21 @@
 <div class="maindiv">
   <h2 style="text-align: center">Welcome User👋 Explore some secrets 🙌</h2>
   <div class="container-fluid"> 
-    
+    <div class="row">
+      <% secrets.forEach(function(secret){ %>
+        <div class=" cards col-lg-4 col-md-12 col-sm-12 mb-3">
+          <div class="card border border-3">
+            <div class="card-header text_date">
+              <div class="home_card_date">📅 <%= secret.dateGiven%></div>
+            </div>
+            <div class="card-body">
+              <h3><%= secret.postTitle%></h3>
+              <p class="card-text" id="displayText" ><%= secret.postBody.slice(0,100)%>...</p>
+            </div>
+            <div class="btn txt-primary" onclick = "location.href='/secrets/<%= secret.postTitle%>'">Read More</div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
   </div>
 </div>
