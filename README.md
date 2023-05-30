@@ -1,4 +1,4 @@
-# Memoric - Place to share secrets
+# Secretzz - Place to share secrets
 
 This web app is created using NodeJS, ExpressJS, EJS, MongoDB, Bootstrap and Bcrypt!
 
